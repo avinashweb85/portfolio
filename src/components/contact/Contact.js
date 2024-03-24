@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Title from '../layouts/Title';
 import ContactLeft from './ContactLeft';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
     const [username, setUsername] = useState("");
@@ -11,15 +12,7 @@ const Contact = () => {
     const [errMsg, setErrMsg] = useState("");
     const [successMsg, setSuccessMsg] = useState("");
 
-    // ========== Email Validation start here ==============
-    const emailValidation = () => {
-        return String(email)
-            .toLocaleLowerCase()
-            .match(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/);
-    };
-    // ========== Email Validation end here ================
-
-    const handleSend = (e) => {
+    const handleSend = async (e) => {
         e.preventDefault();
         if (username === "") {
             setErrMsg("Username is required!");
@@ -27,13 +20,12 @@ const Contact = () => {
             setErrMsg("Phone number is required!");
         } else if (email === "") {
             setErrMsg("Please give your Email!");
-        } else if (!emailValidation(email)) {
-            setErrMsg("Give a valid Email!");
         } else if (subject === "") {
             setErrMsg("Plese give your Subject!");
         } else if (message === "") {
             setErrMsg("Message is required!");
         } else {
+            await emailjs.send(process.env.REACT_APP_YOUR_SERVICE_ID, process.env.REACT_APP_YOUR_TEMPLATE_ID, {username, phoneNumber, email, subject, message}, process.env.REACT_APP_YOUR_USER_ID);
             setSuccessMsg(
                 `Thank you dear ${username}, Your Messages has been sent Successfully!`
             );
@@ -45,6 +37,7 @@ const Contact = () => {
             setMessage("");
         }
     };
+
     return (
         <section
             id="contact"
@@ -80,6 +73,7 @@ const Contact = () => {
                                             "outline-designColor"
                                             } contactInput`}
                                         type="text"
+                                        style={{padding: '5px', color: 'black'}}
                                     />
                                 </div>
                                 <div className="w-full lgl:w-1/2 flex flex-col gap-4">
@@ -92,7 +86,8 @@ const Contact = () => {
                                         className={`${errMsg === "Phone number is required!" &&
                                             "outline-designColor"
                                             } contactInput`}
-                                        type="text"
+                                        type="number"
+                                        style={{padding: '5px', color: 'black'}}
                                     />
                                 </div>
                             </div>
@@ -107,6 +102,7 @@ const Contact = () => {
                                         "outline-designColor"
                                         } contactInput`}
                                     type="email"
+                                    style={{padding: '5px', color: 'black'}}
                                 />
                             </div>
                             <div className="flex flex-col gap-4">
@@ -120,6 +116,7 @@ const Contact = () => {
                                         "outline-designColor"
                                         } contactInput`}
                                     type="text"
+                                    style={{padding: '5px', color: 'black'}}
                                 />
                             </div>
                             <div className="flex flex-col gap-4">
@@ -133,6 +130,7 @@ const Contact = () => {
                                         } contactTextArea`}
                                     cols="30"
                                     rows="8"
+                                    style={{padding: '5px', color: 'black'}}
                                 ></textarea>
                             </div>
                             <div className="w-full">

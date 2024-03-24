@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from '../layouts/Title'
-import { projectOne, projectTwo, projectThree } from "../../assets/index";
+import { projectOne, projectTwo, projectThree, projectFour } from "../../assets/index";
 import ProjectsCard from './ProjectsCard';
 
 const Projects = () => {
@@ -26,21 +26,21 @@ const Projects = () => {
         <ProjectsCard
           title="QUIZ APP"
           des="A quiz app in JavaScript allows users to take quizzes on various topics and receive feedback on their answers. These apps typically present users with a series of questions, allow them to select answers, and then evaluate their responses to provide a score or feedback."
-          src={projectTwo}
+          src={projectThree}
           url="https://avinashweb85.github.io/quiz/"
           gitUrl="https://github.com/avinashweb85/quiz"
         />
         <ProjectsCard
           title="TO-DO LIST"
           des="A ToDo list in React provides a user-friendly interface for organizing tasks with features like adding, updating, and deleting tasks. It leverages React's state management and component reusability to create a responsive and efficient task management system."
-          src={projectThree}
+          src={projectTwo}
           url="https://avinashweb85.github.io/todolist/"
           gitUrl="https://github.com/avinashweb85/todolist"
         />
         <ProjectsCard
           title="RAG-AND-DROP"
           des="HTML/CSS drag and drop functionality empowers users to seamlessly rearrange elements on a webpage using mouse interactions, enhancing usability and interactivity without external libraries. This is achieved through HTML's draggable attribute and CSS styling for visual cues."
-          src={projectThree}
+          src={projectFour}
           url="https://avinashweb85.github.io/DRAG-AND-DROP/"
           gitUrl="https://github.com/avinashweb85/DRAG-AND-DROP"
         />
