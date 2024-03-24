@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 // import logo from "../../assests/logo.png";
-import {logo} from '../../assets/index'
+import { logo } from '../../assets/index'
 import { Link } from "react-scroll";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
@@ -8,11 +8,11 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { navLinksdata } from '../../constants';
 
 function Navbar() {
-    const [showMenu, setShowMenu]=useState(false)
+    const [showMenu, setShowMenu] = useState(false)
     return (
         <div className="w-full h-24 sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
             <div>
-                <img src={logo} alt="logo" className='w-20'/>
+                <img src={logo} alt="logo" className='w-20' />
             </div>
             <div>
                 <ul className="hidden mdl:inline-flex items-center gap-6 lg:gap-10">
@@ -46,9 +46,7 @@ function Navbar() {
                             <div>
                                 <img className="w-32" src={logo} alt="logo" />
                                 <p className="text-sm text-gray-400 mt-2">
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                    Earum soluta perspiciatis molestias enim cum repellat, magnam
-                                    exercitationem distinctio aliquid nam.
+                                    I have 4 plus Year of extensive experience in building web User Interface and interactive software products using HTML, CSS, JavaScript, React js, Redux and Blockchain.
                                 </p>
                             </div>
                             <ul className="flex flex-col gap-4">
