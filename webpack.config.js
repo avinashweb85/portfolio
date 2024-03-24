@@ -24,7 +24,19 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[ext]',
+                      outputPath: 'images', // Optional: output folder for images
+                    },
+                  },
+                ],
+              },
         ]
     },
     plugins: [
